@@ -2,7 +2,7 @@
   "name": "fastlane-react-start",
   "private": true,
   "scripts": {
-    "build": "slidev build --output public",
+    "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export"
   },
