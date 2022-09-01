@@ -3,7 +3,7 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: ./assets/react-bg.png
+background: /assets/react-bg.png
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
@@ -35,7 +35,7 @@ css: unocss
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+  <a href="https://github.com/quanscheng/fastlane-react-start" target="_blank" alt="GitHub"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
