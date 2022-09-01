@@ -9,7 +9,7 @@ class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
-lineNumbers: false
+lineNumbers: true
 # some information about the slides, markdown enabled
 info: |
   ## Slidev Starter Template
@@ -43,58 +43,36 @@ css: unocss
 
 ---
 
-# React
-
 <img border="rounded" src="/assets/React-mind-01.png">
 
 ---
 
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+# UI
 
 <div grid="~ cols-2 gap-2" m="-t-2">
 
-```yaml
----
-theme: default
----
+<span>html</span>
+
+<span>js</span>
+
+```html {1|2|3|all}
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
 ```
 
-```yaml
----
-theme: seriph
----
+```html {1|2|3|all}
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
 ```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
 
 </div>
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+---
+
+<img border="rounded" src="/assets/Hydrogen-mind.png" class="h-120 row-reverse">
