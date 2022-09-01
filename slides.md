@@ -5,7 +5,7 @@ theme: default
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: /assets/react-bg.png
 # apply any windi css classes to the current slide
-class: 'text-center'
+class: "text-center"
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
@@ -47,31 +47,74 @@ css: unocss
 
 ---
 
-# UI
+# JSX
 
-<div grid="~ cols-2 gap-2" m="-t-2">
+<Col2>
 
-<span>html</span>
+<p>html</p>
 
-<span>js</span>
+<p>js</p>
 
-```html {1|2|3|all}
+```html {all|2-4|all}
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>item1</li>
+  <li>item2</li>
+  <li>item3</li>
 </ul>
 ```
 
-```html {1|2|3|all}
-<ul>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
+```js {}
+function fn(list = []) {
+  return list.map(({ id, label }) => label)
+}
+
+const objArray = [
+  { id: 1, label: "item1" },
+  { id: 2, label: "item2" },
+  { id: 3, label: "item3" },
+]
+
+fn(objArray) // ['item1', 'item2', 'item3']
 ```
 
-</div>
+</Col2>
+
+---
+
+# JSX
+
+<Col2>
+
+```js {all}
+const head_id = 89757
+const objArray = [
+  { id: 1, label: "item1" },
+  { id: 2, label: "item2" },
+  { id: 3, label: "item3" },
+]
+// `{ }` 你可以在大括号内放置任何有效的 JavaScript 表达式
+const head = <h1>this is Heading1, id={head_id}</h1>
+
+// 遍历数组渲染特定属性值的时候,
+// 应该确保每个返回的的项都有唯一标识 key
+const list = objArray.map(({ id, label }) => (
+  <li key={id}>{label}</li>
+))
+
+// 渲染到组件
+function ComponentA() {
+  return (
+    <>
+      {head}
+      <ol>{list}</ol>
+    </>
+  )
+}
+```
+
+[<img border="rounded" src="/assets/RenderJSX1.png" mt="30">](https://codesandbox.io/s/jsx-demo-1-yp3slu?file=/src/App.js)
+
+</Col2>
 
 ---
 
