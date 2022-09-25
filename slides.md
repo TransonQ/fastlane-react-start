@@ -175,7 +175,40 @@ function AboutPage() {
 
 ---
 
-# JSX
+# 渲染数据
+
+<iframe src="https://codesandbox.io/embed/react-jsx-demo-1-wwuwcx?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
+     title="react-jsx-demo-1"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+---
+
+# 条件渲染
+
+<iframe src="https://codesandbox.io/embed/react-jsx-demo-2-129z4q?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
+     title="react-jsx-demo-2"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+---
+
+# 跟新视图和事件处理
+
+<iframe src="https://codesandbox.io/embed/react-jsx-demo-3-dtelpe?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
+     title="react-jsx-demo-3"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+---
+
+# 渲染列表
 
 <Col2>
 
@@ -220,11 +253,9 @@ const objArray = [
   { id: 2, label: "item2" },
   { id: 3, label: "item3" },
 ]
-// `{ }` 你可以在大括号内放置任何有效的 JavaScript 表达式
 const head = <h1>this is Heading1, id={head_id}</h1>
 
-// 遍历数组渲染特定属性值的时候,
-// 应该确保每个返回的的项都有唯一标识 key
+// 唯一标识 key
 const list = objArray.map(({ id, label }) => (
   <li key={id}>{label}</li>
 ))
