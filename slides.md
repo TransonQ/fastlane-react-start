@@ -120,7 +120,7 @@ root.render(<App />)
 
 ---
 
-<img border="rounded" src="assets/React.png" >
+<img border="rounded" src="/assets/React.png" >
 
 ---
 
@@ -277,4 +277,19 @@ function ComponentA() {
 
 ---
 
-<img border="rounded" src="/assets/Hydrogen-mind.png" class="h-120 row-reverse">
+# Hydrogen.js
+
+[web 开发视图](https://www.yuque.com/docs/share/0751af65-b404-40a9-9221-bd424ebe0e70)
+
+> Node 16.14.0+
+
+- 创建并运行 demo
+- 项目结构
+- 渲染内容
+- 添加 tailwindcss
+- fetch data
+  - graphQL Storefront API
+  - useShopQuery
+- 基于文件的路由系统
+- 产品页的增/删/改/查
+- 购物车业务模块
