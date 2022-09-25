@@ -120,7 +120,7 @@ root.render(<App />)
 
 ---
 
-![](assets/React.png)
+<img border="rounded" src="assets/React.png" >
 
 ---
 
