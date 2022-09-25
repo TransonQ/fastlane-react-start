@@ -118,7 +118,7 @@ root.render(<App />)
 
 ---
 
-![react](assets/React.png)
+![react](/React.png)
 
 ---
 
