@@ -42,8 +42,6 @@ css: unocss
 </div>
 
 ---
-layout: cover
----
 
 # 从新建项目开始
 
@@ -56,6 +54,7 @@ layout: cover
 ```
 npx create-react-app [项目名字]
 ```
+
 <br/>
 
 - 基于 webpack
@@ -94,8 +93,6 @@ npm create vite@latest my-vue-app -- --template react # npm7+ ,7 以下则不需
 
 [基于 Vite 的规范自制模版](https://github.com/quanscheng/react-vite-template)
 
-
-
 ---
 
 # 根元素
@@ -104,21 +101,77 @@ npm create vite@latest my-vue-app -- --template react # npm7+ ,7 以下则不需
 index.js
 
 ```jsx {all|4|5|all}
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import ReactDOM from "react-dom/client"
+import App from "./App"
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+)
 root.render(<App />)
 ```
 
 - 这个 `<div id="root"></div>` 节点被称为根节点, 是 react 渲染树的起点.
+
 - root 可以被放在 body 标签的任何位置.
+
 - React 会将这个标签内的所有内容替换成后续开发的各种组件
+
 - 通俗理解就是整个应用其实就是在一个 id 是 root 的 div 里面来回切换内容 -- 单页面应用的由来
 
 ---
 
-![react](/React.png)
+![](assets/React.png)
+
+---
+
+# 编写 jsx
+
+```jsx {all|1|2|4,5|3,6|all}
+function AboutPage() {
+  return (
+    <>
+      <h1>About</h1>
+      <p>
+        Hello there.
+        <br />
+        How do you do?
+      </p>
+    </>
+  )
+}
+```
+
+- 单个组件只能返回一个 jsx.
+
+- 如果需要包装多个 jsx 那么需要包装在同一个父级标签
+
+- 如果不希望增加多余的标签 可以使用 `<></>` 空标签包起来
+
+---
+
+# 样式
+
+<br/>
+行内样式
+
+```jsx
+ <div style={ { maxHeiget:100 } }></div>
+ <div style={ { maxHeiget:'100vh' } }></div>
+```
+
+- 当 jsx 内部需要传递变量,会解析 jsx 里面`{}`中的内容
+- 行内表达式需要传递 css 对象
+- css 对象中的 css 属性必须全部转换成小驼峰写法
+- css 对象中属性值接受两种基本类型: Number 和 String
+- 纯数字表示默认单位 px , 指定单位需要写成字符串
+
+类名
+
+```jsx
+<div className=""></div>
+```
+
+- react 为了不跟原生 classname 冲突,添加类名的写法做了驼峰处理
 
 ---
 
@@ -140,13 +193,13 @@ root.render(<App />)
 
 ```js {}
 function fn(list = []) {
-  return list.map(({id, label}) => label)
+  return list.map(({ id, label }) => label)
 }
 
 const objArray = [
-  {id: 1, label: "item1"},
-  {id: 2, label: "item2"},
-  {id: 3, label: "item3"},
+  { id: 1, label: "item1" },
+  { id: 2, label: "item2" },
+  { id: 3, label: "item3" },
 ]
 
 fn(objArray) // ['item1', 'item2', 'item3']
@@ -163,16 +216,16 @@ fn(objArray) // ['item1', 'item2', 'item3']
 ```js {all}
 const head_id = 89757
 const objArray = [
-  {id: 1, label: "item1"},
-  {id: 2, label: "item2"},
-  {id: 3, label: "item3"},
+  { id: 1, label: "item1" },
+  { id: 2, label: "item2" },
+  { id: 3, label: "item3" },
 ]
 // `{ }` 你可以在大括号内放置任何有效的 JavaScript 表达式
 const head = <h1>this is Heading1, id={head_id}</h1>
 
 // 遍历数组渲染特定属性值的时候,
 // 应该确保每个返回的的项都有唯一标识 key
-const list = objArray.map(({id, label}) => (
+const list = objArray.map(({ id, label }) => (
   <li key={id}>{label}</li>
 ))
 
