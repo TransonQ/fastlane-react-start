@@ -58,19 +58,19 @@ npx create-react-app [项目名字]
 ```
 <br/>
 
-- 基于webpack
+- 基于 webpack
 - 官方推荐
 - 具备完备的生产打包能力
 - 开箱即用
-- 默认隐藏配置文件,两种方式自定义配置
-  - eject: 操作不可逆,暴露所有webpack配置
-  - craco: 第三方库,通过制定配置文件覆盖CRA内部的配置
+- 默认隐藏配置文件, 两种方式自定义配置
+  - eject: 操作不可逆, 暴露所有 webpack 配置
+  - craco: 第三方库, 通过制定配置文件覆盖 CRA 内部的配置
 
 <br/>
 
-[create-react-app文档](https://create-react-app.dev/docs/getting-started)
+[create-react-app 文档](https://create-react-app.dev/docs/getting-started)
 
-[基于CRA的规范自制模版](https://github.com/quanscheng/react-template)
+[基于 CRA 的规范自制模版](https://github.com/quanscheng/react-template)
 
 ---
 
@@ -79,24 +79,42 @@ npx create-react-app [项目名字]
 <br/>
 
 ```bash
-npm create vite@latest my-vue-app -- --template react # npm7+ ,7以下则不需要中间的双杠'--'
+npm create vite@latest my-vue-app -- --template react # npm7+ ,7 以下则不需要中间的双杠'--'
 ```
 
 <br/>
 
-- 基于Rollup
-- 官方新文档称之为'流行的CRA替代品'
-- ESM模块
+- 基于 Rollup
+- 官方新文档称之为'流行的 CRA 替代品'
+- ESM 模块
 - 开发体验舒适
-- 配置化快捷, 同时需要注意 ESM 不支持 `__dirname` 需要自行配置( 场景: path alias )
+- 配置化快捷, 同时需要注意 ESM 不支持 `__dirname` 需要自行配置 (场景: path alias)
 
 [vite 文档](https://cn.vitejs.dev/)
 
-[基于Vite的规范自制模版](https://github.com/quanscheng/react-vite-template)
+[基于 Vite 的规范自制模版](https://github.com/quanscheng/react-vite-template)
 
 
 
+---
 
+# 根元素
+
+<br/>
+index.js
+
+```jsx {all|4|5|all}
+import ReactDOM from 'react-dom/client'
+import App from './App'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+```
+
+- 这个 `<div id="root"></div>` 节点被称为根节点, 是 react 渲染树的起点.
+- root 可以被放在 body 标签的任何位置.
+- React 会将这个标签内的所有内容替换成后续开发的各种组件
+- 通俗理解就是整个应用其实就是在一个 id 是 root 的 div 里面来回切换内容 -- 单页面应用的由来
 
 ---
 
@@ -122,13 +140,13 @@ npm create vite@latest my-vue-app -- --template react # npm7+ ,7以下则不需�
 
 ```js {}
 function fn(list = []) {
-  return list.map(({ id, label }) => label)
+  return list.map(({id, label}) => label)
 }
 
 const objArray = [
-  { id: 1, label: "item1" },
-  { id: 2, label: "item2" },
-  { id: 3, label: "item3" },
+  {id: 1, label: "item1"},
+  {id: 2, label: "item2"},
+  {id: 3, label: "item3"},
 ]
 
 fn(objArray) // ['item1', 'item2', 'item3']
@@ -145,16 +163,16 @@ fn(objArray) // ['item1', 'item2', 'item3']
 ```js {all}
 const head_id = 89757
 const objArray = [
-  { id: 1, label: "item1" },
-  { id: 2, label: "item2" },
-  { id: 3, label: "item3" },
+  {id: 1, label: "item1"},
+  {id: 2, label: "item2"},
+  {id: 3, label: "item3"},
 ]
 // `{ }` 你可以在大括号内放置任何有效的 JavaScript 表达式
 const head = <h1>this is Heading1, id={head_id}</h1>
 
 // 遍历数组渲染特定属性值的时候,
 // 应该确保每个返回的的项都有唯一标识 key
-const list = objArray.map(({ id, label }) => (
+const list = objArray.map(({id, label}) => (
   <li key={id}>{label}</li>
 ))
 
