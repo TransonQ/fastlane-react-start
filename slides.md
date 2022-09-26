@@ -277,6 +277,10 @@ function ComponentA() {
 
 ---
 
+<img border="rounded" src="https://github.com/Shopify/hydrogen/raw/v1.x-2022-07/.github/images/hydrogen-logo.svg" >
+
+---
+
 # Hydrogen.js
 
 [web 开发视图](https://www.yuque.com/docs/share/0751af65-b404-40a9-9221-bd424ebe0e70)
@@ -293,3 +297,32 @@ function ComponentA() {
 - 基于文件的路由系统
 - 产品页的增/删/改/查
 - 购物车业务模块
+
+```bash
+npm init @shopify/hydrogen -- --template hello-world
+```
+
+---
+
+# hydrogen 最小用例项目结构
+
+```
+├── public
+    └── .gitkeep              // 允许 Git 识别空目录
+├── src
+    └── assets
+    │   └── favicon.svg
+    ├── routes
+    │   ├── index.server.jsx  // 用于呈现应用主页的 React 服务端组件
+    ├── App.server.jsx        // 根组件 / 顶级组件
+    ├── index.css
+├── hydrogen.config.js        // Hydrogen 配置文件
+├── index.html
+├── jsconfig.json
+├── package.json
+├── README.md
+├── vite.config.js
+
+```
+
+---
