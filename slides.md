@@ -326,3 +326,5 @@ npm init @shopify/hydrogen -- --template hello-world
 ```
 
 ---
+
+# 跟随官方引导开始代码演示
